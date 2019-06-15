@@ -225,7 +225,7 @@ public class Product {
             Statement s = conn.createStatement();
             s.executeUpdate(
                     "create table products (ID integer primary key, name varchar(50),g_name varchar(50),category varchar(50)," +
-                            "exp_date DATE,manufacturer varchar(50),gst decimal,cgst decimal,hsn_code integer,units_strips varchar(20)" +
+                            "expdate DATE,manufacturer varchar(50),gst decimal,cgst decimal,hsn_code integer,units_strips varchar(20)" +
                             "cp Decimal, sp decimal, type varchar(5), stock decimal)");
             return true;
         } catch (SQLException e) {

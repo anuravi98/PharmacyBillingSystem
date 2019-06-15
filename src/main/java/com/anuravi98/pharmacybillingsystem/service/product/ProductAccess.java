@@ -87,8 +87,30 @@ public class ProductAccess {
         }
         return toreturn;
     }
-
-
-    public static class StockStatement {
+    public  static ArrayList<Product> expiredProducts()
+    {
+        ArrayList<Product> products = new ArrayList<Product>();
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from products where expdate > ? ");
+            long millis=System.currentTimeMillis();
+            java.sql.Date date=new java.sql.Date(millis);
+            ps.setDate(1,date);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                products.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getString("generic_name"),
+                        rs.getString("manufacturer"),
+                        rs.getString ("type"),rs.getString ("category"),
+                        rs.getBigDecimal( "cp"),String.valueOf(rs.getDate("ExpiryDate")), rs.getBigDecimal ("sp"),
+                        rs.getBigDecimal ("stock"),rs.getBigDecimal(" cgst"),
+                        rs.getBigDecimal(" gst"),rs.getInt("hsn_code"),rs.getString(" units_strips")));
+            }
+            return products;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
+
+
+
 }

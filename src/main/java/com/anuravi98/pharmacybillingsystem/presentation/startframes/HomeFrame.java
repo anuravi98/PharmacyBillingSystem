@@ -4,6 +4,7 @@ import com.anuravi98.pharmacybillingsystem.integration.user.User;
 import com.anuravi98.pharmacybillingsystem.presentation.billing.BillingFrame;
 import com.anuravi98.pharmacybillingsystem.presentation.producthandling.*;
 import com.anuravi98.pharmacybillingsystem.presentation.userhandling.UserHomeFrame;
+import com.anuravi98.pharmacybillingsystem.service.product.ExpiredProducts;
 import com.anuravi98.pharmacybillingsystem.service.product.ProductAccess;
 import com.anuravi98.pharmacybillingsystem.service.product.StockStatement;
 
@@ -17,6 +18,7 @@ import java.awt.event.ActionListener;
  */
 public class HomeFrame extends JFrame implements ActionListener {
 
+    private  JButton expiredproducts;
     private JLabel title;
     private JButton addProduct, deleteProduct, updateProduct, billing, searchProduct, stockStatement,userManagement;
     private JPanel top,bottom;
@@ -44,6 +46,7 @@ public class HomeFrame extends JFrame implements ActionListener {
         billing = new JButton("Billing");
         searchProduct = new JButton("Search");
         stockStatement = new JButton("Stock Statement");
+        expiredproducts= new JButton("Expired Products");
 
 
         top.add(title);
@@ -70,6 +73,10 @@ public class HomeFrame extends JFrame implements ActionListener {
         gbc.gridy = 3;
         gbc.gridwidth = 2;
         bottom.add(stockStatement,gbc);
+        gbc.gridx=2;
+        gbc.gridy=2;
+        bottom.add(expiredproducts,gbc);
+
 
         if (user.getAdmin()){
             userManagement = new JButton("Users");
@@ -85,7 +92,7 @@ public class HomeFrame extends JFrame implements ActionListener {
         billing.addActionListener(this);
         searchProduct.addActionListener(this);
         stockStatement.addActionListener(this);
-
+        expiredproducts.addActionListener(this);
         setVisible(true);
         add(top,BorderLayout.NORTH);
         add(bottom,BorderLayout.CENTER);
@@ -117,6 +124,11 @@ public class HomeFrame extends JFrame implements ActionListener {
         else if(e.getSource() == stockStatement){
             StockStatement sStatement = new StockStatement();
             sStatement.start();
+        }
+        else if (e.getSource()== expiredproducts)
+        {
+            ExpiredProducts eStatement=new ExpiredProducts();
+            eStatement.start();
         }
         else if(e.getSource() == userManagement){
             UserHomeFrame uhf = new UserHomeFrame();
