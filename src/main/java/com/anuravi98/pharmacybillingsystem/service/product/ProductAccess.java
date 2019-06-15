@@ -6,31 +6,38 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 public class ProductAccess {
+
     private static Connection conn = dbconnection.DBconnect.getConnection("products");
-    public static ArrayList<Product> lookupByID(int ID) {
+    public static ArrayList<Product> lookupByID(int ID)  {
         ArrayList<Product> products = new ArrayList<Product>();
         try {
             PreparedStatement ps = conn.prepareStatement("select * from products where id = ?");
             ps.setInt(1, ID);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                products.add(new Product(rs.getInt("id"), rs.getString("name"),rs.getString("generic_name"),
-                        rs.getString("manufacturer"),rs.getString ("type"),rs.getString ("category"),
-                        rs.getBigDecimal( "cp"), rs.getBigDecimal ("sp"),
+                products.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getString("generic_name"),
+                        rs.getString("manufacturer"),
+                        rs.getString ("type"),rs.getString ("category"),
+                        rs.getBigDecimal( "cp"),String.valueOf(rs.getDate("ExpiryDate")), rs.getBigDecimal ("sp"),
                         rs.getBigDecimal ("stock"),rs.getBigDecimal(" cgst"),
                         rs.getBigDecimal(" gst"),rs.getInt("hsn_code"),rs.getString(" units_strips")));
             }
             return products;
-        } catch (SQLException e) {
+        }  catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
+
         return null;
 
     }
 
-    public static ArrayList<Product> lookup(String name) {
+    public static ArrayList<Product> lookup(String name)  {
         ArrayList<Product> products = new ArrayList<Product>();
         try {
             PreparedStatement ps = conn.prepareStatement("select * from products where name like ?");
@@ -39,14 +46,17 @@ public class ProductAccess {
             while (rs.next()) {
                 //String manufacturer,String type,String category,BigDecimal cp,
                 //                    BigDecimal sp,BigDecimal stock,BigDecimal cgst,BigDecimal gst,int hsn_code,String units_strips
-                products.add(new Product(rs.getInt("id"), rs.getString("name"),rs.getString("generic_name"),
-                        rs.getString("manufacturer"),rs.getString ("type"),rs.getString ("category"),
-                        rs.getBigDecimal( "cp"), rs.getBigDecimal ("sp"),
+                products.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getString("generic_name"),
+                        rs.getString("manufacturer"),
+                        rs.getString ("type"),rs.getString ("category"),
+                        rs.getBigDecimal( "cp"),String.valueOf(rs.getDate("ExpiryDate")), rs.getBigDecimal ("sp"),
                         rs.getBigDecimal ("stock"),rs.getBigDecimal(" cgst"),
                         rs.getBigDecimal(" gst"),rs.getInt("hsn_code"),rs.getString(" units_strips")));
             }
             return products;
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
@@ -57,14 +67,15 @@ public class ProductAccess {
             PreparedStatement ps = conn.prepareStatement("select * from products");
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                products.add(new Product(rs.getInt("id"), rs.getString("name"),rs.getString("generic_name"),
-                        rs.getString("manufacturer"),rs.getString ("type"),rs.getString ("category"),
-                        rs.getBigDecimal( "cp"), rs.getBigDecimal ("sp"),
+                products.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getString("generic_name"),
+                        rs.getString("manufacturer"),
+                        rs.getString ("type"),rs.getString ("category"),
+                        rs.getBigDecimal( "cp"),String.valueOf(rs.getDate("ExpiryDate")), rs.getBigDecimal ("sp"),
                         rs.getBigDecimal ("stock"),rs.getBigDecimal(" cgst"),
                         rs.getBigDecimal(" gst"),rs.getInt("hsn_code"),rs.getString(" units_strips")));
             }
             return products;
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;

@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 //import static groovy.xml.Entity.para;
 
 public class Product {
@@ -14,8 +16,11 @@ public class Product {
     private BigDecimal cp, sp, stock,cgst,gst;
     private int hsn_code;
     private String units_strips;
-    private static Connection conn;
 
+    private static Connection conn;
+    private Date ExpiryDate;
+    String pattern = "yyyy-MM-dd";
+    SimpleDateFormat format = new SimpleDateFormat(pattern);
     /**
      *
      * @param ID id of product
@@ -40,8 +45,8 @@ public class Product {
      * @param hsn_code hsn_code
      * @param units_strips choose
      */
-    public Product(String name,String generic_name,String manufacturer,String type,String category,BigDecimal cp,
-                    BigDecimal sp,BigDecimal stock,BigDecimal cgst,BigDecimal gst,int hsn_code,String units_strips)
+    public Product(String name,String generic_name,String manufacturer,String type,String category,BigDecimal cp,String expdate,
+                    BigDecimal sp,BigDecimal stock,BigDecimal cgst,BigDecimal gst,int hsn_code,String units_strips) throws Exception
     {
         this.category= category;
         this.generic_name=generic_name;
@@ -55,6 +60,7 @@ public class Product {
         this.sp=sp;
         this.hsn_code=hsn_code;
         this.units_strips=units_strips;
+        this.ExpiryDate=format.parse(expdate);
 
 
     }
@@ -75,8 +81,8 @@ public class Product {
      * @param hsn_code hsn_code
      * @param units_strips choose
      */
-    public Product(int ID,String name,String generic_name,String manufacturer,String type,String category,BigDecimal cp,
-                    BigDecimal sp,BigDecimal stock,BigDecimal cgst,BigDecimal gst,int hsn_code,String units_strips)
+    public Product(int ID,String name,String generic_name,String manufacturer,String type,String category,BigDecimal cp,String expdate,
+                    BigDecimal sp,BigDecimal stock,BigDecimal cgst,BigDecimal gst,int hsn_code,String units_strips) throws Exception
     { this.ID=ID;
         this.category= category;
         this.generic_name=generic_name;
@@ -90,6 +96,7 @@ public class Product {
         this.sp=sp;
         this.hsn_code=hsn_code;
         this.units_strips=units_strips;
+        this.ExpiryDate=format.parse(expdate);
 
 
     }
@@ -197,6 +204,15 @@ public class Product {
     public void setUnits_strips(String units_strips) {
         this.units_strips = units_strips;
     }
+
+    public Date getExpiryDate() {
+        return ExpiryDate;
+    }
+
+    public void setExpiryDate(Date expiryDate) {
+        ExpiryDate = expiryDate;
+    }
+
     /**
      * Function to create the table for products
      *int hsn_code,String units_strips
@@ -209,7 +225,7 @@ public class Product {
             Statement s = conn.createStatement();
             s.executeUpdate(
                     "create table products (ID integer primary key, name varchar(50),g_name varchar(50),category varchar(50)," +
-                            "manufacturer varchar(50),gst decimal,cgst decimal,hsn_code integer,units_strips varchar(20)" +
+                            "exp_date DATE,manufacturer varchar(50),gst decimal,cgst decimal,hsn_code integer,units_strips varchar(20)" +
                             "cp Decimal, sp decimal, type varchar(5), stock decimal)");
             return true;
         } catch (SQLException e) {
@@ -234,15 +250,16 @@ public class Product {
             ps.setString(2, name);
             ps.setString(3,generic_name);
             ps.setString(4, category);
-            ps.setString(5, manufacturer);
-            ps.setBigDecimal(6,gst);
-            ps.setBigDecimal(7,cgst);
-            ps.setInt(8,hsn_code);
-            ps.setString(9,units_strips);
-            ps.setBigDecimal(10,cp);
-            ps.setBigDecimal(11,sp);
-            ps.setString(12,type);
-            ps.setBigDecimal(13,stock);
+            ps.setDate(5, (java.sql.Date) ExpiryDate);
+            ps.setString(6, manufacturer);
+            ps.setBigDecimal(7,gst);
+            ps.setBigDecimal(8,cgst);
+            ps.setInt(9,hsn_code);
+            ps.setString(10,units_strips);
+            ps.setBigDecimal(11,cp);
+            ps.setBigDecimal(12,sp);
+            ps.setString(13,type);
+            ps.setBigDecimal(14,stock);
             ps.executeUpdate();
             conn.close();
             return true;

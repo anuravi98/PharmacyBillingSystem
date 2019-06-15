@@ -18,9 +18,9 @@ import java.math.BigDecimal;
 
 public class AddProductFrame extends JFrame implements ActionListener, ItemListener {
     JPanel header, content, footer;
-    JLabel title, idLabel, nameLabel, buyLabel, sellLabel, typeLabel, stockLabel,generic_nameLabel,manufacturerLabel,gstLabel,
+    JLabel title, idLabel, nameLabel, buyLabel, sellLabel, typeLabel,ExpdateLabel, stockLabel,generic_nameLabel,manufacturerLabel,gstLabel,
             cgstLabel,unit_stripsLabel,categoryLabel,hsn_codeLabel;;
-    JTextField id, name, buy, sell, stock,generic_name,manufacturer,gst,cgst,category,hsn_code;
+    JTextField id, name, buy, sell, stock,generic_name,manufacturer,gst,cgst,category,hsn_code,Expdate;
     JCheckBox type,units_strips;
     JButton addButton, clearButton;
     Product product;
@@ -40,6 +40,7 @@ public class AddProductFrame extends JFrame implements ActionListener, ItemListe
         buyLabel = new JLabel("Buy Price");
         sellLabel = new JLabel("Sell Price");
         typeLabel = new JLabel("Type");
+        ExpdateLabel=new JLabel("Expiry Date");
         stockLabel = new JLabel("Stock");
         generic_nameLabel=new JLabel("Generic name");
         manufacturerLabel=new JLabel("manufacturer");
@@ -53,6 +54,7 @@ public class AddProductFrame extends JFrame implements ActionListener, ItemListe
         name = new JTextField();
         buy = new JTextField();
         sell = new JTextField();
+        Expdate=new JTextField();
         stock = new JTextField();
         manufacturer= new JTextField();
         gst= new JTextField();
@@ -73,6 +75,7 @@ public class AddProductFrame extends JFrame implements ActionListener, ItemListe
         content.add(nameLabel);
         content.add(buyLabel);
         content.add(sellLabel);
+        content.add(ExpdateLabel);
         content.add(typeLabel);
         content.add(stockLabel);
         content.add(generic_nameLabel);content.add(manufacturerLabel);content.add(gstLabel);content.add(cgstLabel);content.add(unit_stripsLabel);
@@ -81,6 +84,7 @@ public class AddProductFrame extends JFrame implements ActionListener, ItemListe
         content.add(name);
         content.add(buy);
         content.add(sell);
+        content.add(Expdate);
         content.add(type);
         content.add(stock);
         content.add(generic_name);content.add(manufacturer);content.add(gst);content.add(cgst);content.add(units_strips);
@@ -121,32 +125,38 @@ public class AddProductFrame extends JFrame implements ActionListener, ItemListe
      * @param e The Action Event
      */
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e)  {
         if (e.getSource() == clearButton) {
             name.setText("");
             buy.setText("");
             sell.setText("");
             stock.setText("");
         } else if (e.getSource() == addButton) {
-            product = new Product(Integer.parseInt(id.getText()),name.getText(),generic_name.getText(),manufacturer.getText(),type.getText(),category.getText(),
-                    new BigDecimal (buy.getText()), new BigDecimal (sell.getText()),new BigDecimal(stock.getText()),
-                    new BigDecimal (cgst.getText()),new BigDecimal (gst.getText()),Integer.parseInt(hsn_code.getText()),units_strips.getText());
-            if (product.insertProduct()) {
-                int newID = Integer.parseInt(id.getText()) + 1;
-                id.setText(newID + "");
-                try {
-                    FileWriter fw = new FileWriter("billing.json");
-                    jsonObject.put("productID", new Long(newID));
-                    fw.write(jsonObject.toJSONString());
-                    fw.close();
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                } finally {
-                    name.setText("");
-                    buy.setText("");
-                    sell.setText("");
-                    stock.setText("");
+            try {
+                product = new Product(Integer.parseInt(id.getText()), name.getText(), generic_name.getText(), manufacturer.getText(), type.getText(), category.getText(),
+                        new BigDecimal(buy.getText()), Expdate.getText(), new BigDecimal(sell.getText()), new BigDecimal(stock.getText()),
+                        new BigDecimal(cgst.getText()), new BigDecimal(gst.getText()), Integer.parseInt(hsn_code.getText()), units_strips.getText());
+                if (product.insertProduct()) {
+                    int newID = Integer.parseInt(id.getText()) + 1;
+                    id.setText(newID + "");
+                    try {
+                        FileWriter fw = new FileWriter("billing.json");
+                        jsonObject.put("productID", new Long(newID));
+                        fw.write(jsonObject.toJSONString());
+                        fw.close();
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                    } finally {
+                        name.setText("");
+                        buy.setText("");
+                        sell.setText("");
+                        stock.setText("");
+                    }
                 }
+            }
+            catch (Exception exception)
+            {
+
             }
         }
     }
