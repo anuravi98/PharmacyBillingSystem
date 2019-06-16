@@ -2,6 +2,7 @@ package com.anuravi98.pharmacybillingsystem.service.product;
 import com.anuravi98.pharmacybillingsystem.integration.product.Product;
 
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -110,7 +111,24 @@ public class ProductAccess {
         }
         return null;
     }
+    public  static ArrayList<String> stockAlert()
+    {
+        ArrayList<String> productsName = new ArrayList<String>();
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from products where stock < 10 ");
 
+            ps.setBigDecimal(1, new BigDecimal(10));
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                productsName.add(rs.getString("name"));
+
+            }
+            return productsName;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 
 }

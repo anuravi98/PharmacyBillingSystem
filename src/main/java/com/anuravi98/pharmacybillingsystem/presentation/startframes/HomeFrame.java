@@ -6,6 +6,7 @@ import com.anuravi98.pharmacybillingsystem.presentation.producthandling.*;
 import com.anuravi98.pharmacybillingsystem.presentation.userhandling.UserHomeFrame;
 import com.anuravi98.pharmacybillingsystem.service.product.ExpiredProducts;
 import com.anuravi98.pharmacybillingsystem.service.product.ProductAccess;
+import com.anuravi98.pharmacybillingsystem.service.product.StockAlert;
 import com.anuravi98.pharmacybillingsystem.service.product.StockStatement;
 
 import javax.swing.*;
@@ -18,6 +19,7 @@ import java.awt.event.ActionListener;
  */
 public class HomeFrame extends JFrame implements ActionListener {
 
+    private final JButton stockalert;
     private  JButton expiredproducts;
     private JLabel title;
     private JButton addProduct, deleteProduct, updateProduct, billing, searchProduct, stockStatement,userManagement;
@@ -47,7 +49,7 @@ public class HomeFrame extends JFrame implements ActionListener {
         searchProduct = new JButton("Search");
         stockStatement = new JButton("Stock Statement");
         expiredproducts= new JButton("Expired Products");
-
+        stockalert=new JButton("Stock Alert");
 
         top.add(title);
         gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -76,7 +78,9 @@ public class HomeFrame extends JFrame implements ActionListener {
         gbc.gridx=2;
         gbc.gridy=2;
         bottom.add(expiredproducts,gbc);
-
+        gbc.gridx=0;
+        gbc.gridy=3;
+        bottom.add(stockalert,gbc);
 
         if (user.getAdmin()){
             userManagement = new JButton("Users");
@@ -132,6 +136,11 @@ public class HomeFrame extends JFrame implements ActionListener {
         }
         else if(e.getSource() == userManagement){
             UserHomeFrame uhf = new UserHomeFrame();
+        }
+        else if(e.getSource()== stockalert)
+        {
+            StockAlert sAlert=new StockAlert();
+            sAlert.start();
         }
 
     }

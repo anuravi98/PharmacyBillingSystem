@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7763e3d3-b26d-437d-80bc-0a0414b1bb31" name="Default Changelist" comment="adding gradle">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/anuradharavi.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/service/product/StockAlert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/integration/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/integration/product/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/presentation/startframes/HomeFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/presentation/startframes/HomeFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/service/product/ProductAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/service/product/ProductAccess.java" afterDir="false" />
     </list>
@@ -33,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/service/product/ExpiredProducts.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret lean-forward="true" />
+              <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,28 +41,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/service/product/StockStatement.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/service/product/StockAlert.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+            <state relative-caret-position="375">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/presentation/startframes/HomeFrame.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/presentation/producthandling/AddProductFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="48" column="57" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
+            <state relative-caret-position="150">
+              <caret line="152" column="39" selection-start-line="152" selection-start-column="39" selection-end-line="152" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/presentation/producthandling/AddProductFrame.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/presentation/startframes/HomeFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="152" column="39" lean-forward="true" selection-start-line="152" selection-start-column="39" selection-end-line="152" selection-end-column="39" />
+            <state relative-caret-position="45">
+              <caret line="105" column="7" lean-forward="true" selection-start-line="105" selection-start-column="7" selection-end-line="105" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -85,8 +87,9 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/presentation/producthandling/AddProductFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/integration/product/Product.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/service/product/ProductAccess.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/service/product/ExpiredProducts.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/service/product/ProductAccess.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/service/product/StockAlert.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/presentation/startframes/HomeFrame.java" />
       </list>
     </option>
@@ -102,6 +105,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -112,11 +117,6 @@
             <path>
               <item name="PharmacyBillingSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="PharmacyBillingSystem" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PharmacyBillingSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PharmacyBillingSystem" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -139,60 +139,11 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="pharmacybillingsystem" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PharmacyBillingSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PharmacyBillingSystem" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pharmacybillingsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="integration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PharmacyBillingSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PharmacyBillingSystem" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pharmacybillingsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="presentation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PharmacyBillingSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PharmacyBillingSystem" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pharmacybillingsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="presentation" type="462c0819:PsiDirectoryNode" />
-              <item name="startframes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PharmacyBillingSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PharmacyBillingSystem" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pharmacybillingsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PharmacyBillingSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PharmacyBillingSystem" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pharmacybillingsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="product" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -229,7 +180,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26037195" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24964234" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -291,25 +242,23 @@
     <MESSAGE value="adding gradle" />
     <option name="LAST_COMMIT_MESSAGE" value="adding gradle" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/service/product/StockAlert.java</url>
+          <line>25</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/presentation/producthandling/SearchProductFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
           <caret line="106" column="49" lean-forward="true" selection-start-line="106" selection-start-column="49" selection-end-line="106" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/integration/product/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="239" column="6" lean-forward="true" selection-start-line="239" selection-start-column="6" selection-end-line="239" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4865#4866#0" expanded="true" />
-            <element signature="e#4898#4899#0" expanded="true" />
-            <element signature="e#5016#5017#0" expanded="true" />
-            <element signature="e#5055#5056#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -320,13 +269,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/service/product/ProductAccess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="96" column="31" selection-start-line="96" selection-start-column="31" selection-end-line="96" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/service/product/StockUpdater.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -334,34 +276,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/service/product/ExpiredProducts.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/service/product/StockStatement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="30">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/service/product/ProductAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="108" column="31" lean-forward="true" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
+          <folding>
+            <element signature="e#5408#5416#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/integration/product/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="228" column="80" lean-forward="true" selection-start-line="228" selection-start-column="80" selection-end-line="228" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/service/product/StockStatement.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/service/product/ExpiredProducts.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        <state>
+          <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/presentation/startframes/HomeFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/service/product/StockAlert.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="48" column="57" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
+        <state relative-caret-position="375">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/presentation/producthandling/AddProductFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="152" column="39" lean-forward="true" selection-start-line="152" selection-start-column="39" selection-end-line="152" selection-end-column="39" />
+          <caret line="152" column="39" selection-start-line="152" selection-start-column="39" selection-end-line="152" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/anuravi98/pharmacybillingsystem/presentation/startframes/HomeFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="105" column="7" lean-forward="true" selection-start-line="105" selection-start-column="7" selection-end-line="105" selection-end-column="7" />
         </state>
       </provider>
     </entry>
