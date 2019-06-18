@@ -88,6 +88,11 @@ public class ProductAccess {
         }
         return toreturn;
     }
+
+    /**
+     *
+     * @return list of products
+     */
     public  static ArrayList<Product> expiredProducts()
     {
         ArrayList<Product> products = new ArrayList<Product>();
@@ -111,6 +116,11 @@ public class ProductAccess {
         }
         return null;
     }
+
+    /**
+     *
+     * @return list of product names
+     */
     public  static ArrayList<String> stockAlert()
     {
         ArrayList<String> productsName = new ArrayList<String>();

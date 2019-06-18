@@ -41,8 +41,9 @@ public class BillMailer {
         System.out.println("Username set.");
         props = new Properties();
         session = Session.getInstance(props, new javax.mail.Authenticator() {
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(username, password);
+            protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
+                final PasswordAuthentication passwordAuthentication = new PasswordAuthentication(username, password);
+                return passwordAuthentication;
             }
         });
     }
